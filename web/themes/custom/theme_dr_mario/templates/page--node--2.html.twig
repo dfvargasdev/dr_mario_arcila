@@ -1,0 +1,176 @@
+<header class="header">
+  <nav>
+    <div class="logo-wrapper">
+      <a><img class="logo" src="/themes/custom/theme_dr_mario/assets/img/mario-arcila-logo.png" alt="logo"></a>
+    </div>
+    <div class="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="menu-container">
+      <li><a href="">INICIO</a></li>
+      <li><a href="">ABS</a></li>
+      <li><a href="">COOLSCULPTING</a></li>
+      <li><a href="">ANTI AGE</a></li>
+      <li><a href="">INYECTABLES</a></li>
+      <li><a href="">CIRUGIAS</a></li>
+      <li><a href="">CONTACTENOS</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="main-banner">
+  <picture class="main-banner-bg">
+    <source srcset="{{ file_url(node.field_banner_desktop_image.entity.uri.value) }}" media="(min-width: 1024px)">
+    <img src="{{ file_url(node.field_banner_mobile_image.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_banner_mobile_image.alt }}"/>
+  </picture>
+  <article class="main-banner-info">
+    {{ node.field_banner_text.value|raw  }}
+    <a href="{{ node.field_banner_button.0.url  }}">{{ node.field_banner_button.0.title  }}</a>
+  </article>
+</section>
+
+<section class="banner-info">
+  <p class="description">
+    {{ node.field_banner_footer.value  }}
+  </p>
+</section>
+
+<section class="second-banner">
+  <div class="container">
+    <picture class="img-title">
+      <source srcset="{{ file_url(node.field_second_banner_destop_image.entity.uri.value) }}" media="(min-width: 1024px)">
+      <img src="{{ file_url(node.field_second_banner_mobile_image.entity.uri.value) }}" width="100%" height="100%"
+           alt="{{ node.field_second_banner_mobile_image.alt }}"/>
+    </picture>
+    <p class="description">{{ node.field_second_banner_text.value  }}</p>
+    <a href="{{ node.field_second_banner_button.0.url  }}" class="btn-show-more">{{ node.field_second_banner_button.0.title }}</a>
+  </div>
+
+</section>
+
+<section class="third-banner">
+  <article class="first-wrapper">
+    <img src="{{ file_url(node.field_third_banner_image_right.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_third_banner_image_right.alt }}">
+  </article>
+  <img class="machine" src="{{ file_url(node.field_third_banner_image_central.entity.uri.value) }}"
+       alt="{{ node.field_third_banner_image_central.alt }}">
+  <article class="second-wrapper">
+    <img class="bg-pattern" src="{{ file_url(node.field_third_banner_image_left.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_third_banner_image_left.alt }}">
+    <img class="title" src="{{ file_url(node.field_third_banner_image_title.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_third_banner_image_title.alt }}" >
+    <img class="description" src="{{ file_url(node.field_third_banner_image_text.entity.uri.value) }}"
+         alt="{{ node.field_third_banner_image_text.alt }}" >
+    <a class="cta-btn" href="{{ node.field_second_banner_button.0.url  }}">
+      {{ node.field_second_banner_button.0.title }}</a>
+  </article>
+</section>
+
+<section class="antiage-banner">
+  <article class="first-wrapper">
+    <img src="{{ file_url(node.field_fourth_banner_image_left.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_fourth_banner_image_left.alt }}"/>
+    <img class="antiage-brand" src="{{ file_url(node.field_fourth_banner_image_centra.entity.uri.value) }}"
+         alt="{{ node.field_fourth_banner_image_centra.alt }}">
+  </article>
+  <article class="second-wrapper">
+    <img class="bg-pattern" src="{{ file_url(node.field_fourth_banner_image_right.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_fourth_banner_image_right.alt }}">
+    <p class="antiage-description">
+      {{ node.field_fourth_banner_text.value  }}
+    </p>
+    <a class="antiage-cta" href="{{ node.field_fourth_banner_button.0.url  }}">
+      {{ node.field_fourth_banner_button.0.title }}</a>
+  </article>
+</section>
+
+<section class="rejuvenece-banner">
+
+  <picture class="first-image">
+    <source srcset="{{ file_url(node.field_fifth_banner_background_de.entity.uri.value) }}" media="(min-width: 1024px)">
+    <img src="{{ file_url(node.field_fifth_banner_background_mo.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_fifth_banner_background_de.alt }}"/>
+  </picture>
+
+  <picture class="second-image">
+    <source srcset="{{ file_url(node.field_fifth_banner_text_desktop_.entity.uri.value) }}" media="(min-width: 1024px)">
+    <img src="{{ file_url(node.field_fifth_banner_text_mobile_i.entity.uri.value) }}" width="100%" height="100%"
+         alt="{{ node.field_fifth_banner_text_desktop_.alt }}"/>
+  </picture>
+
+</section>
+
+<section class="reviews">
+  <div class="splide" aria-label="slider reviews">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for item in node.field_slider_customers %}
+          <li class="splide__slide">
+            <h3>{{ item.entity.field_title.value }}</h3>
+            <hr>
+            <p>
+              {{ item.entity.field_description.value }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- INSERTAR AQUI EL MAPA -->
+<!-- 
+    <section class="map">
+
+    </section> -->
+
+<section class="form">
+  <form class="form-contact">
+    <div class="form-wrapper">
+      <label for="name">Nombre*</label>
+      <input type="text" name="name" placeholder="Ingresa tu nombre">
+    </div>
+    <div class="form-wrapper">
+      <label for="address">Direccion</label>
+      <input type="text" name="address" placeholder="Ingresa tu dirección">
+    </div>
+
+    <div class="form-wrapper form-wrapper__contact">
+      <label for="name">Email*</label>
+      <input type="email" name="email" placeholder="Ingresa tu email">
+    </div>
+
+    <div class="form-wrapper form-wrapper__contact">
+      <label for="phone">Teléfono</label>
+      <input type="text" name="phone" placeholder="Ingresa tu número de telefono">
+    </div>
+
+    <div class="form-wrapper">
+      <label for="subject">Asunto</label>
+      <input type="text" name="subject" placeholder="Ingresa el asunto">
+    </div>
+
+    <div class="form-wrapper">
+      <label for="message">Mensaje</label>
+      <textarea name="message"cols="30" rows="10" placeholder="Escribe tu mensaje"></textarea>
+    </div>
+
+    <button class="form-cta" type="submit">ENVIAR</button>
+  </form>
+</section>
+
+<footer class="footer" id="form">
+  <section class="social">
+    <a href="instagram"><img src="/themes/custom/theme_dr_mario/assets/img/instagram-logo.png" alt="instagram logo"></a>
+    <a href="facebook"><img src="/themes/custom/theme_dr_mario/assets/img/facebook-logo.png" alt="facebook logo"></a>
+    <a href="youtube"><img src="/themes/custom/theme_dr_mario/assets/img/youtube-logo.png" alt="youtube logo"></a>
+  </section>
+  <img class="logo" src="/themes/custom/theme_dr_mario/assets/img/mario-arcila-logo.png" alt="Mario arcila logo">
+</footer>
+
+
+

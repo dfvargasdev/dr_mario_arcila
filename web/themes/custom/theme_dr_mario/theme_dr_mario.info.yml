@@ -1,0 +1,12 @@
+name: DrMario
+type: theme
+description: 'Dr. Mario Ardila Theme.'
+core_version_requirement: '>=9.2'
+libraries:
+  - theme_dr_mario/global-styling
+base theme: stable9
+regions:
+  header: 'Header'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  footer: 'Footer'

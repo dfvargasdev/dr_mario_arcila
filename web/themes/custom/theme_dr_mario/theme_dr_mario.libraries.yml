@@ -1,0 +1,15 @@
+global-styling:
+  version: 1.x
+  js:
+    assets/js/home.js: { attributes: { defer: true }, minified: true }
+    //cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js: { type: external }
+  css:
+    base:
+      assets/css/home.css: { attributes: { preload: true }, preprocess: false, minified: true }
+      //cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css: { type: external, attributes: { defer: true }}
+
+#global-styling:
+#  version: 1.x
+#  css:
+#    theme:
+#      dist/css/main.css: {}

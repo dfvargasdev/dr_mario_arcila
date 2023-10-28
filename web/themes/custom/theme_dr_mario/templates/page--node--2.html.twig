@@ -1,7 +1,10 @@
 <header class="header">
   <nav>
     <div class="logo-wrapper">
-      <a><img class="logo" src="/themes/custom/theme_dr_mario/assets/img/mario-arcila-logo.png" alt="logo"></a>
+      <a>
+        <img class="logo" src="{{ file_url(node.field_logo.entity.uri.value) }}"
+             alt="{{ node.field_logo.alt }}">
+      </a>
     </div>
     <div class="burger-menu">
       <span></span>
@@ -9,13 +12,9 @@
       <span></span>
     </div>
     <ul class="menu-container">
-      <li><a href="">INICIO</a></li>
-      <li><a href="">ABS</a></li>
-      <li><a href="">COOLSCULPTING</a></li>
-      <li><a href="">ANTI AGE</a></li>
-      <li><a href="">INYECTABLES</a></li>
-      <li><a href="">CIRUGIAS</a></li>
-      <li><a href="">CONTACTENOS</a></li>
+      {% for item in node.field_menu %}
+        <li><a href="{{ item.entity.field_link.value }}">{{ item.entity.field_menu_link_title.value }}</a></li>
+      {% endfor %}
     </ul>
   </nav>
 </header>
@@ -165,11 +164,14 @@
 
 <footer class="footer" id="form">
   <section class="social">
-    <a href="instagram"><img src="/themes/custom/theme_dr_mario/assets/img/instagram-logo.png" alt="instagram logo"></a>
-    <a href="facebook"><img src="/themes/custom/theme_dr_mario/assets/img/facebook-logo.png" alt="facebook logo"></a>
-    <a href="youtube"><img src="/themes/custom/theme_dr_mario/assets/img/youtube-logo.png" alt="youtube logo"></a>
+    {% for item in node.field_social %}
+      <a href="{{ item.entity.field_link.value }}">
+        <img src="{{ file_url(item.entity.field_logo.entity.uri.value) }}" alt="{{ item.entity.field_logo.alt }}">
+      </a>
+    {% endfor %}
   </section>
-  <img class="logo" src="/themes/custom/theme_dr_mario/assets/img/mario-arcila-logo.png" alt="Mario arcila logo">
+  <img class="logo" src="{{ file_url(node.field_logo.entity.uri.value) }}"
+       alt="{{ node.field_logo.alt }}">
 </footer>
 
 

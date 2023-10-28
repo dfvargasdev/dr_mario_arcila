@@ -7,9 +7,3 @@ global-styling:
     base:
       assets/css/home.css: { attributes: { preload: true }, preprocess: false, minified: true }
       //cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css: { type: external, attributes: { defer: true }}
-
-#global-styling:
-#  version: 1.x
-#  css:
-#    theme:
-#      dist/css/main.css: {}
